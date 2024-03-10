@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Game</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Memory Game</h1>
+  <button onclick="startGame()">Comenzar</button>
+  <p id="instruction" style="display:none;">Memoriza la secuencia y escríbela a continuación:</p>
+  <div class="sequence-container" style="display:none;">
+    <div id="sequence"></div>
+  </div>
+  <input type="text" id="user-input" style="display:none;" placeholder="Ingresa la secuencia aquí" onkeypress="checkEnter(event)">
+  <button onclick="checkSequence()" style="display:none;">Verificar</button>
+  <button onclick="nextRound()" style="display:none;">Siguiente</button>
+  <button onclick="restartGame()" style="display:none;">Jugar de nuevo</button>
+  <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

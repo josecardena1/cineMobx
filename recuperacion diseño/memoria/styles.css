@@ -1,0 +1,69 @@
+body {
+    background-color: #2b87d1;
+    font-family: 'Roboto', sans-serif;
+    color: white; /* Cambiar el color de texto a blanco */
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #ffd154;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: black; /* Mantener el color de texto negro para los botones */
+}
+
+button:hover {
+    background-color: #d0d0d0;
+}
+
+.instruction {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.sequence-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#sequence {
+    margin: 0.5rem;
+    width: 100px; /* Ajusta el tamaño del número */
+    height: 100px; /* Ajusta el tamaño del número */
+    color: white;
+    font-size: 3rem; /* Ajusta el tamaño del número */
+    line-height: 100px; /* Centra verticalmente el número */
+}
+
+input {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#result {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
