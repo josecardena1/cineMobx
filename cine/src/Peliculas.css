@@ -1,0 +1,210 @@
+/* Peliculas.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../public/img/fondo1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px; /* Añadimos espacio interno al contenedor */
+  max-width: 1200px; /* Limitamos el ancho máximo */
+  margin: 0 auto; /* Centramos el contenedor en la página */
+}
+
+.col {
+  flex: 0 0 calc(33.33% - 40px); /* Ancho de cada columna (33.33% del contenedor menos el margen) */
+  margin: 0 20px; /* Margen izquierdo y derecho para separar las columnas */
+  box-sizing: border-box; /* Incluir el margen en el ancho total de la columna */
+}
+
+.col:last-child {
+  margin-right: 0; /* Eliminamos el margen derecho de la última columna en cada fila */
+}
+
+.col img {
+  width: 100%; /* Ajustamos el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Permitimos que la altura se ajuste automáticamente */
+}
+
+.col h1 {
+  margin: 0; /* Eliminamos los márgenes internos del título */
+  color: white;
+  font-size: 20px; /* Tamaño del título */
+  text-align: center; /* Centramos el texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el título */
+  padding: 10px; /* Espaciado interno para el título */
+}
+
+/* Estilos para el contenedor de la película */
+.viewtrailer {
+  width: 350px; /* Ancho completo del contenedor de la película */
+  height: 300px; /* Altura fija del contenedor de la película */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative; /* Establecer posición relativa para poder posicionar el título */
+  margin-bottom: 20px;
+}
+
+/* Estilos para el título de la película */
+.viewtrailer h1 {
+  position: absolute; /* Posicionar el título encima de la película */
+  bottom: 10px; /* Ajustar la posición vertical del título */
+  left: 0; /* Alinear el título a la izquierda */
+  right: 0; /* Alinear el título a la derecha */
+  margin: 0 auto; /* Centrar el título horizontalmente */
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  width: 80%; /* Ancho del título */
+}
+
+.viewtrailer img {
+  width: 100%; /* Ajustar el ancho máximo de la imagen */
+  height: auto;
+  object-fit: cover; /* Ajustar el tamaño de la imagen manteniendo la proporción */
+}
+
+.boton {
+  background-color: #0f1014;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 16, 20, 0.8); /* Azul oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white; /* Azul marino */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  height: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 30px #FF4500, 0 0 40px #FF4500, 0 0 50px #FF4500, 0 0 60px #FF4500, 0 0 70px #FF4500; /* Efecto de neón naranja */
+}
+
+.popup-content img {
+  max-width: 200px; /* Ancho máximo deseado */
+  height: auto;
+  margin-right: 20px; /* Espacio derecho para separar la imagen del formulario */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  width: 23%; /* Ajustamos el ancho de cada tarjeta */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white; /* Cambiamos el color de fondo de la tarjeta */
+  text-align: center;
+}
+
+.title {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.botones {
+  background-color: #FF4500; /* Cambiamos el color de fondo de los botones */
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.botones:hover {
+  background-color: #FF6347; /* Cambiamos el color de fondo al pasar el ratón */
+}
+
+.buscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buscar input[type="text"] {
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 10px #fff;
+}
+
+.buscar input[type="text"]:focus {
+  outline: none;
+  border-color: #00ffea;
+  box-shadow: 0 0 10px #00ffea;
+}
+
+.buscar .buscarboton {
+  background-color: #FF4500; /* Cambiamos el color de fondo de los botones */
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.buscar .buscarboton:hover {
+  background-color: #FF6347
+}
+
+.buscar .buscarboton:focus {
+  outline: none;
+  box-shadow: 0 0 10px #FF6347;
+}
