@@ -1,0 +1,40 @@
+.neon-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    position: relative;
+    transition: border-bottom-color 0.4s;
+  }
+  
+  .neon-input::placeholder {
+    color: #fff;
+    opacity: 0.5;
+  }
+  
+  .neon-input:focus {
+    border-bottom-color: #03a9f4;
+  }
+  
+  .neon-button {
+    background-color: transparent;
+    border: 2px solid #03a9f4;
+    color: #03a9f4;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.4s, color 0.4s;
+    margin-bottom: 10px;
+  }
+  
+  .neon-button:hover {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+  

@@ -8,7 +8,7 @@ class FilmsStore {
     filmsState = {
         films: [],
         favoritos: [],
-        //otros atributos de estado...
+        entradas: JSON.parse(localStorage.getItem('entradas')) || [], // Obtener las entradas guardadas del localStorage al inicio
     }
 
     constructor() {
@@ -16,7 +16,9 @@ class FilmsStore {
             filmsState: observable,
             prefetchData: action,
             setFilms: action,
-            setFavoritos: action
+            setFavoritos: action,
+            setEntradas: action, // Método para actualizar las entradas
+            searchMoviesByKeyword: action,
         });
         this.prefetchData();
     }
@@ -29,22 +31,44 @@ class FilmsStore {
         this.filmsState.favoritos = favoritos;
     }
 
+    setEntradas = (entradas) => { // Método para actualizar las entradas
+        this.filmsState.entradas = entradas;
+    }
+
     prefetchData = async () => {
         try {
             const response = await axios.get(`${this.API_URL}/movie/popular`, {
                 params: {
                     api_key: this.API_KEY,
-                    language: "es", // Opcional, ajusta según tu preferencia de idioma
-                    page: 1, // Obtener la primera página de resultados
+                    language: "es",
+                    page: 1,
                 }
             });
 
-            const films = response.data.results.slice(0, 20); // Obtener solo las primeras 20 películas
+            const films = response.data.results.slice(0, 20);
             console.log("Películas obtenidas:", films);
 
             this.setFilms(films);
         } catch (error) {
             console.error("Error al buscar películas", error);
+        }
+    }
+
+    searchMoviesByKeyword = async (keywords) => {
+        try {
+            const response = await axios.get(`${this.API_URL}/search/movie`, {
+                params: {
+                    api_key: this.API_KEY,
+                    query: keywords,
+                }
+            });
+
+            const films = response.data.results;
+            console.log("Películas encontradas:", films);
+
+            this.setFilms(films);
+        } catch (error) {
+            console.error("Error al buscar películas por palabra clave", error);
         }
     }
 }

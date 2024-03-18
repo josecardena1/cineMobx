@@ -6,6 +6,9 @@ function Header() {
   const links = [
     { name: "Inicio", path: "/" },
     { name: "Peliculas", path: "/films" },
+    { name: "Entradas", path: "/entradas" },
+    { name: "Favoritos", path: "/favoritos" },
+
   ];
 
   const activeLinkClass = 'block py-2 px-3 text-primary-500 rounded md:p-0';
